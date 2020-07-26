@@ -1,0 +1,116 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+body{
+    background-color: pink;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 800px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.container .col-right{
+    flex:1;
+    
+}
+
+.container .col-right img{
+    height: 100vh;
+}
+
+
+.container .col-left{
+    flex:1;
+    display: flex;
+    justify-content: flex-start;
+   
+}
+
+.container .col-left h1{
+    color:black;
+    
+}
+
+
+.container .col-left h1{
+    position: relative;
+    display: block;
+    width: fit-content; /*O arruma o tamanho para a animação da camd*/
+    color: transparent;
+    animation: text_reveal ease 0.5s forwards;
+    animation-delay: 0.5s;
+}
+
+.col-left h1 span{
+    position: absolute;
+    
+    top:0;
+    left:0;
+    height: 100%;
+    width: 0;
+    background-color: white;
+    animation: overlay 1s forwards;
+    animation-delay: .5;
+}
+
+
+.col-left h1:nth-child(1){
+    animation-delay: 1.5s;
+}
+.col-left h1:nth-child(2){
+    animation-delay: 2.0s;
+}
+.col-left h1:nth-child(3){
+    animation-delay: 2.5s;
+}
+
+.col-left h1:nth-child(1) span{
+    animation-delay: 1s;
+}
+.col-left h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+.col-left h1:nth-child(3) span{
+    animation-delay: 2s;
+}
+
+
+
+
+@keyframes overlay{
+    
+    50%{       
+        left:0;
+        width: 100%;
+    }
+    100%{
+        left:100%;
+        width: 0%;
+    }
+
+}
+
+@keyframes text_reveal{
+    to{
+        color:black;
+    }
+}
+
+
